@@ -1,18 +1,19 @@
 @hilmanrdn
 simple cms with PHP&MySQL as Backend
 
-
-Page Done:
+---------------
++Page Done:
+---------------
 Index(Home Blog)
 Single Page
+Search Page
+
 Admin: index, add, delete, edit
 
-
-Todo:
+---------------
++Todo:
+---------------
 user authentification
 time_updated at
-Searching Ability
-Pagination System
-
--refactor
--styling
+refactor
+styling

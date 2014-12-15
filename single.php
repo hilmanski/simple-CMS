@@ -4,12 +4,14 @@
 include_once("database/db.php");
 include_once("database/blog.php");
 
-$blogList = new Blog;
+$blog = new Blog;
 
 
 if(isset($_GET['id'])){
   $id = $_GET['id'];
-  $singleList = $blogList->fetch_single($id);
+  $singleList = $blog->fetch_single($id);
+
+  // print_r($singleList);
 ?>
 
 
@@ -20,19 +22,18 @@ if(isset($_GET['id'])){
   </head>
   <body>
 
-    <h1>Own CMS, be Proud !</h1>
+    <h1>Single Page!</h1>
 
+    <h3>
+      <a href="single.php?id=<?php echo $singleList['id']; ?> ">
+        <? echo $singleList['title']; ?>
+      </a>
+    </h3>
+    <p>  <? echo $singleList['content']; ?> </p>
+    <p> Created At: <? echo $singleList['created_at']; ?> </p>
+    <p> Tag:  <? echo $singleList['tag']; ?> </p>
 
-          <h3>
-            <a href="single.php?id=<?php echo $singleList['id']; ?> ">
-              <? echo $singleList['title']; ?>
-            </a>
-          </h3>
-          <p>  <? echo $singleList['content']; ?> </p>
-          <p> Created At: <? echo $singleList['created_at']; ?> </p>
-          <p> Tag:  <? echo $singleList['tag']; ?> </p>
-
-          <a href="index.php"> &larr;Back </a>
+    <a href="index.php"> &larr;Home </a>
 
   </body>
 

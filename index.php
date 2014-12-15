@@ -7,11 +7,6 @@ include_once("database/blog.php");
 $blogList = new Blog;
 $blogLists = $blogList->fetch_all();
 
-   if(isset($_POST['search'])){
-      $src = $_POST['search'];
-      $test = $blogList->search($src);
-    }
-
 ?>
 
 <!doctype html>
@@ -40,12 +35,10 @@ $blogLists = $blogList->fetch_all();
       </ol>
 
       <!-- add search -->
-      <form action="index.php" method="post">
+      <form action="search.php" method="get">
         <input type="text" name="search" value="">
         <input type="submit" name="submit" value="search">
       </form>
-
-      <div id="output"></div>
 
   </body>
 

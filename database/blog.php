@@ -29,37 +29,28 @@
 
       global $pdo;
 
-      if(isset($src)) {
+      //replace the first argument with second(blank)
+      $searchq = preg_replace("#[^0-9a-z]#i","",  $src);
 
-          //replace the first argument with second(blank)
-          $searchq = preg_replace("#[^0-9a-z]#i","",  $src);
+      //echo $searchq;
 
-          //echo $searchq;
+      $query = $pdo->prepare("SELECT * FROM blog WHERE title LIKE '%$searchq%'");
 
-          $query = $pdo->prepare("SELECT * FROM blog WHERE title LIKE '%$searchq%'");
+      $query->execute();
 
-          $query->execute();
+      $count = $query->rowCount();
 
-          $count = $query->rowCount();
+      if($count == 0){
+        echo 'nothing found!';
+      }else {
 
-          if($count == 0){
-            $output = 'nothing found!';
-          }else {
+      }
 
-            while($row = $query->fetch()) {
-              $fname = $row['title'];
-              $lname = $row['content'];
-
-              $output .= '<div>'.$fname.' '.$lname.'</div>';
-
-            }
-          }
-        }
-
-        echo($output);
+     return $query->fetchAll();
+        // echo($output);
     }
 
 
- }
+ } //close tag for class Blog
 
 ?>
