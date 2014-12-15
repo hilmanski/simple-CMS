@@ -38,6 +38,7 @@
         <?php } ?>
       </ol>
 
+    <?php include_once("template/searchform.php"); ?>  
 
   </body>
 

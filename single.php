@@ -35,6 +35,8 @@ if(isset($_GET['id'])){
 
     <a href="index.php"> &larr;Home </a>
 
+    <?php include_once("template/searchform.php"); ?>  
+
   </body>
 
 </html>

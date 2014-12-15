@@ -34,11 +34,7 @@ $blogLists = $blogList->fetch_all();
           <?php } ?>
       </ol>
 
-      <!-- add search -->
-      <form action="search.php" method="get">
-        <input type="text" name="search" value="">
-        <input type="submit" name="submit" value="search">
-      </form>
+      <?php include_once("template/searchform.php"); ?>  
 
   </body>
 
