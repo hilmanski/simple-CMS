@@ -1,10 +1,6 @@
 <?php
 
-session_start();
-
-include_once('../database/db.php');
 include_once('../database/blog.php');
-
 
   if(isset($_GET['id'])) {
 
@@ -15,7 +11,7 @@ include_once('../database/blog.php');
     $query->execute();
 
     Header('Location: index.php');
-    
+
   }
 
 

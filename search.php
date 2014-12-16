@@ -1,7 +1,5 @@
 <?php
 
-  //connect to the database and buffer the blog.php page
-  include_once("database/db.php");
   include_once("database/blog.php");
 
   $blog = new Blog;
@@ -38,7 +36,7 @@
         <?php } ?>
       </ol>
 
-    <?php include_once("template/searchform.php"); ?>  
+    <?php include_once("template/searchform.php"); ?>
 
   </body>
 

@@ -1,6 +1,5 @@
 <?php
 
-  include_once('../database/db.php');
   include_once('../database/blog.php');
 
   $blogList = new Blog;

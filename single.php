@@ -1,7 +1,5 @@
 <?php
 
-//connect to the database and buffer the blog.php page
-include_once("database/db.php");
 include_once("database/blog.php");
 
 $blog = new Blog;
@@ -22,7 +20,7 @@ if(isset($_GET['id'])){
   </head>
   <body>
 
-    <h1>Single Page!</h1>
+    <h1>Single Page !!</h1>
 
     <h3>
       <a href="single.php?id=<?php echo $singleList['id']; ?> ">
@@ -35,7 +33,7 @@ if(isset($_GET['id'])){
 
     <a href="index.php"> &larr;Home </a>
 
-    <?php include_once("template/searchform.php"); ?>  
+    <?php include_once("template/searchform.php"); ?>
 
   </body>
 

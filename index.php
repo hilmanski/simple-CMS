@@ -1,11 +1,10 @@
 <?php
 
-//connect to the database and buffer the blog.php page
-include_once("database/db.php");
-include_once("database/blog.php");
+  include_once("database/blog.php");
 
-$blogList = new Blog;
-$blogLists = $blogList->fetch_all();
+  $blogList = new Blog;
+  $rows = $blogList->paginate()[0];
+  $pagination = $blogList->paginate()[1];
 
 ?>
 
@@ -16,25 +15,32 @@ $blogLists = $blogList->fetch_all();
   </head>
   <body>
 
+
+    <h2>Pagination</h2>
+
+    <?php echo $pagination; ?>
+
       <h1>Home Page, Custom CMS</h1>
       <h2><a href="admin/">Login admin</a></h2>
 
       <ol>
-          <?php foreach($blogLists as $blogList) { ?>
+          <?php foreach($rows as $row) { ?>
             <li>
               <h3>
-                 <a href="single.php?id=<?php echo $blogList['id']; ?> ">
-                   <? echo $blogList['title']; ?>
+                 <a href="single.php?id=<?php echo $row['id']; ?> ">
+                   <? echo $row['title']; ?>
                  </a>
               </h3>
-              <p>  <? echo $blogList['content']; ?> </p>
-              <p> Created At: <? echo $blogList['created_at']; ?> </p>
-              <p> Tag:  <? echo $blogList['tag']; ?> </p>
+              <p>  <? echo $row['content']; ?> </p>
+              <p> Created At: <? echo $row['created_at']; ?> </p>
+              <p> Tag:  <? echo $row['tag']; ?> </p>
             </li>
           <?php } ?>
       </ol>
 
-      <?php include_once("template/searchform.php"); ?>  
+      <?php include_once("template/searchform.php"); ?>
+
+
 
   </body>
 
