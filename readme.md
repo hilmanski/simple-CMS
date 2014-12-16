@@ -4,20 +4,17 @@ simple cms with PHP&MySQL as Backend
 ---------------
 +Page Done:
 ---------------
-Index(Home Blog)
-Single Page
-Search Page
+Index(Home Blog) <br>
+Single Page <br>
+Search Page <br> <br>
 
-Admin: index, add, delete, edit
-Pagination System
+Admin: index, add, delete, edit <br>
+Pagination System <br>
 
 ---------------
 +Todo:
 ---------------
-user authentification
-time_updated at
-refactor
-styling
-
-//this is pagination branch
-//pagination ya
+user authentification <br>
+time_updated at <br>
+refactor <br>
+styling <br>
